@@ -1,0 +1,21 @@
+Given(/^I am a guest user$/) do
+ 
+end
+
+When(/^I visit sign up page$/) do
+ visit signup_path 
+end
+
+When(/^I fill in the correct information$/) do
+ 
+fill_in 'Email', with: 'my@email.com'
+	fill_in 'Username', with: 'myname'
+	fill_in 'Password', with: 'qwerty'
+	fill_in 'Password Confirmation', with: 'qwerty'
+	click_button 'Sign Up!'
+
+end
+
+Then(/^I should be signed up$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
