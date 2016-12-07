@@ -17,5 +17,5 @@ fill_in 'Email', with: 'my@email.com'
 end
 
 Then(/^I should be signed up$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+   expect(page).to have_content('Account successfully created')
 end
