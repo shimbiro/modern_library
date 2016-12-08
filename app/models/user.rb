@@ -1,4 +1,5 @@
 class User < ApplicationRecord
-	attr_accessor :email, :name, :password, :password_confirm
-    # has_secure_password
+  validates :username, length: { maximum: 50 }
+  # has_secure_password
+  validates :email, uniqueness: true
 end

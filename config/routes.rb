@@ -7,8 +7,8 @@ get 'signup' => 'users#new'
 get 'users' => 'users#show'
 post 'users' => 'users#create'
 
-get 'login' => 'session#new'
-post 'login' => 'session#create'
+get 'login' => 'sessions#new'
+post 'login' => 'sessions#create'
 delete 'logout' => 'sessions#destroy'
 end
 
