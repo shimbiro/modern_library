@@ -12,6 +12,7 @@ end
             redirect_to users_url , notice:  'Account successfully created'
         else
             render 'new'
+
         end
     end
         #
