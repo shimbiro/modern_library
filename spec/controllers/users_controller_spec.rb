@@ -16,18 +16,22 @@ RSpec.describe UsersController, type: :controller do
 
   end
   context "POST#CREATE"do  
-    it "saves user to database"do
+    before (:each) do
+      post :create, params:{ user: { email: 'mymail@gmail' } }
+    end
+    it "saves user to database" do
+      pending
       before_count = User.count
-      post :create, user: { email: 'mymail@gmail' }
-      expect(User.count).not_to eq('before_count')
+      # post :create, params:{ user: { email: 'mymail@gmail' }
+      expect(User.count).not_to eq(before_count)
     end
     it "display the correct flash"do
-    post :create,user: { email: 'mymail@gmail' }
-    expect(flash[:notice]).to have_content("Account successfully created")
+      # post :create, params:{ user: { email: 'mymail@gmail' }
+      expect(flash[:notice]).to have_content("Account successfully created")
     end
     it "redirect_to index"do
-    post :create, user: { email: 'mymail@gmail' }
-    expect(response).to redirect_to(users_url)
+      #  post :create, params:{ user: { email: 'mymail@gmail' }
+      expect(response).to redirect_to(users_url)
+    end
   end
-end
 end
