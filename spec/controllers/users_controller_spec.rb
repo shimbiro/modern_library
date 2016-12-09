@@ -7,11 +7,27 @@ RSpec.describe UsersController, type: :controller do
     expect(assigns(:user)).to be_a_new(User)
   end
   it "creates new user" do
-    post :create, user:  { email: 'mymail@gmail'}
-    expect(User.count).not_to eq('before_count')
-   expect(flash[:notice]) .to have_content("Account successfully created")
-expect(response).to redirect_to(users_url)
+    # post :create, user:  { email: 'mymail@gmail'}
+    # expect(User.count).not_to eq('before_count')
+    #expect(flash[:notice]) .to have_content("Account successfully created")
+    #expect(response).to redirect_to(users_url)
 
-  
+
+
   end
+  context "POST#CREATE"do  
+    it "saves user to database"do
+      before_count = User.count
+      post :create, user: { email: 'mymail@gmail' }
+      expect(User.count).not_to eq('before_count')
+    end
+    it "display the correct flash"do
+    post :create,user: { email: 'mymail@gmail' }
+    expect(flash[:notice]).to have_content("Account successfully created")
+    end
+    it "redirect_to index"do
+    post :create, user: { email: 'mymail@gmail' }
+    expect(response).to redirect_to(users_url)
+  end
+end
 end
