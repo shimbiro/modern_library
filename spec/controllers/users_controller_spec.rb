@@ -35,3 +35,20 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 end
+context "GET#EDIT"do
+  it "returns an html form for editing" do
+    user = FactoryGirl.create(:user)
+    get:edit, params: {id: user}
+    expect(response).to have_http_status(:success)
+    expect(response).to render_template(:edit)
+  end
+  it "updates last element details in the database" do
+    user = FactoryGirl.update(:user)
+    get :edit, params: { id: user }
+    post:update,params: { user: { name: "Brian moti", email: "brianmoti@gmail.com", password:"moti", password_confirm: "moti"}}
+  end
+end
+
+
+    
+  
