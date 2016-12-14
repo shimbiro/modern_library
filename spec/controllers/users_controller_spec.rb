@@ -34,29 +34,19 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to(users_url)
     end
   end
-end
-context "GET#EDIT"do
-  it "returns an html form for editing" do
-    user = FactoryGirl.create(:user)
-    get :edit, params: {id:user}
-    expect(response).to have_http_status(:success)
-    expect(response).to render_template(:edit)
-  end
-  it "updates last element details in the database" do
-    user = FactoryGirl.create(:user)
+
+ context "GET#EDIT" do
+     it "returns an html form for editing" do
+      user = FactoryGirl.create(:user)
     get :edit, params: { id: user }
-    put :update, params: {user: { email: "brianmoti@gmail.com"}}
-    expect(User.where(email: "brianmoti@gmail.com")).to be_present
-  end
-  # post:update,params: { user: { name: "Brian moti", email: "brianmoti@gmail.com", password:"moti", password_confirm: "moti"}}
-it "returns an html form for displaying results"do
-  get :show
-  expect(response).to have_http_status(:success)
-  expect(response).to render_template(:show)
-end
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template(:edit)
+    end
+ end
 end
 
 
 
-    
-  
+
+
+

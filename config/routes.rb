@@ -11,6 +11,11 @@ get 'login' => 'sessions#new'
 post 'login' => 'sessions#create'
 delete 'logout' => 'sessions#destroy'
 
-get 'edit' => 'user#create'
+patch 'edit/:id', to: 'users#edit'
+  get 'edit' => 'users#edit'
+  put 'update' => 'users#update'
+  get 'users/:id/edit' => 'users#edit'
+  #post 'users/:id/update' => 'users#update'
+  get 'user' => 'users#edit'
 end
 
