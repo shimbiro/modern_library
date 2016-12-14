@@ -42,6 +42,17 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:edit)
     end
+    it "updates element details in the database" do
+      user = FactoryGirl.create(:user)   
+      get :edit, params: { id: user }   
+      put :update, params: {  user:  { :email => "moti@gmail.com"}  }
+      expect(User.where(email: "moti@gmail.com")).to be_present
+    end
+  end
+    it "returns an html form for displaying results" do
+      get :show
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template(:show)
  end
 end
 
