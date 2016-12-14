@@ -8,7 +8,7 @@ end
 	
     if user
 	# Log the user in and redirect to the user's show page.
-	#login_user
+	login_user
 	redirect_to users_path
 	else
 	# Create an error message.

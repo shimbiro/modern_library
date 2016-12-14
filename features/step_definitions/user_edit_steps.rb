@@ -1,10 +1,10 @@
 
 Given(/^am registered user$/) do
-  get '/edit'
+  user = FactoryGirl.create(:user)
 end
 
 When(/^I visit edit page$/) do
-  user = FactoryGirl.create(:user)
+visit edit_path(User)
 end
 
 And(/^edit the details of the user$/) do
