@@ -8,7 +8,9 @@ visit edit_path(User)
 end
 
 And(/^edit the details of the user$/) do
-  get '/edit', id: @user
+  fill_in('Email', with: 'mymail@gmail.com')
+  fill_in('Password', with: 'password')
+  click_button('Save Changes')
 end
 
 And(/^i should update the details$/) do

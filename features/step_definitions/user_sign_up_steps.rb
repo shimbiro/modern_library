@@ -17,5 +17,5 @@ fill_in 'Email', with: 'my@email.com'
 end
 
 Then(/^I should be signed up$/) do
-   expect(page).to have_content('Account successfully created')
+   expect(page).to have_content("Account successfully created")
 end
