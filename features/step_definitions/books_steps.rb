@@ -7,10 +7,13 @@ When(/^I visit books  page$/) do
 end
 
 And(/^fill in the details of the book$/) do
-    pending # Write code here that turns the phrase above into concrete actions
+fill_in 'Title', with: 'kiswahili'
+fill_in 'ISBN', with: '45'
+fill_in 'User_id', with:'1'
+fill_in 'Quantity', with: '8'
 end
 
 Then(/^I should add the book to database$/) do
-    pending # Write code here that turns the phrase above into concrete actions
+    
 end
 
