@@ -18,5 +18,8 @@ patch 'edit/:id', to: 'users#edit'
   get 'users/:id/edit' => 'users#edit'
   #post 'users/:id/update' => 'users#update'
   get 'user' => 'users#edit'
-end
 
+
+get 'books'=> 'books#new'
+
+end
