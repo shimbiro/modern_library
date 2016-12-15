@@ -27,7 +27,7 @@ RSpec.describe UsersController, type: :controller do
     end
     it "display the correct flash"do
       # post :create, params:{ user: { email: 'mymail@gmail' }
-      expect(flash[:page]).to have_content("Account successfully created")
+      expect(flash[:notice]).to have_content("Account successfully created")
     end
     it "redirect_to index"do
       #  post :create, params:{ user: { email: 'mymail@gmail' }
