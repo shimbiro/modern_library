@@ -14,6 +14,6 @@ fill_in 'Quantity', with: '8'
 end
 
 Then(/^I should add the book to database$/) do
-    
+    Book.create(title: "kiswahili")
 end
 
