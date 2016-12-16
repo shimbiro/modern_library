@@ -29,7 +29,7 @@ RSpec.describe UsersController, type: :controller do
       # post :create, params:{ user: { email: 'mymail@gmail' }
       expect(flash[:notice]).to have_content("Account successfully created")
     end
-    it "redirect_to index"do
+    it "redirects to the users index"do
       #  post :create, params:{ user: { email: 'mymail@gmail' }
       expect(response).to redirect_to(users_url)
     end

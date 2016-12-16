@@ -1,5 +1,5 @@
 Given(/^am a registered user$/) do
-  
+   @user =FactoryGirl.create(:user)
 end
 
 When(/^I visit the show page$/) do

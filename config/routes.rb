@@ -1,25 +1,18 @@
 Rails.application.routes.draw do
- get 'sessions/new'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-resources :users
-root 'home#index'
-
-get 'signup' => 'users#new'
-get 'users' => 'users#show'
-post 'users' => 'users#create'
-
-get 'login' => 'sessions#new'
-post 'login' => 'sessions#create'
-delete 'logout' => 'sessions#destroy'
-
-patch 'edit/:id', to: 'users#edit'
-  get 'edit' => 'users#edit'
+  root to: 'home#index'
+  resources :users
+  get 'signup' => 'users#new'
+  post 'users' => 'users#create'
+  get 'users' => 'users#show'
+  get 'login'  => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get 'users/:id/edit'  => 'users#edit'
   put 'update' => 'users#update'
-  get 'users/:id/edit' => 'users#edit'
-  #post 'users/:id/update' => 'users#update'
-  get 'user' => 'users#edit'
-
-
-get 'books'=> 'books#new'
-
+  get 'edit' => 'users#edit'
+  resources :books
+  get 'books/:id/edit' => 'books#edit'
+  get 'edit' => 'books#edit'
+  get 'books' => 'books#show'
+  put 'update' => 'books#update'
 end
