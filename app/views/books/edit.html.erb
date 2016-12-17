@@ -2,16 +2,16 @@
 <h1>Update your profile</h>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <%=form_for(@book) do |f| %>
+            <%= form_for(@book) do |f| %>
                 <%= f.label :title, 'Title' %>
-                <% = f.text_field :title%><br />
-                <% = f.label :ISBN, 'ISBN' %>
-                <% = f.text_field :ISBN%><br />
-                <% = f.label :user_id, 'User_id' %>
-                <% = f.text_field :user_id%><br />
-                <% = f.label :quantity, 'Quantity' %>
-                <%= f.text_field :quantity%><br />
-                <% f.submit "Save Changes", class: "btn btn-primary" %>
+                <%= f.text_field :title %><br />
+                <%= f.label :ISBN, 'ISBN' %>
+                <%= f.text_field :ISBN %><br />
+                <%= f.label :user_id, 'User_id' %>
+                <%= f.text_field :user_id %><br />
+                <%= f.label :quantity, 'Quantity' %>
+                <%= f.text_field :quantity %><br />
+                <% f.submit "Change", class: "btn btn-primary" %>
     
             <% end%>
         </div>

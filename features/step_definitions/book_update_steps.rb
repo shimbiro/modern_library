@@ -12,7 +12,7 @@ When(/^write my new details$/) do
   fill_in 'User_id', with: '1'
   fill_in 'Quantity', with: '8'
    
-  click_button('Update Changes')
+  click_button('Change')
 end
 
 Then(/^my details should be updated in the database$/) do
